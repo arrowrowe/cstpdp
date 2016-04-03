@@ -1,0 +1,24 @@
+{
+  "name": "cstpdp",
+  "private": true,
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arrowrowe/cstpdp.git"
+  },
+  "author": "arrowrowe <arrowrowe@gmail.com> (https://github.com/arrowrowe)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arrowrowe/cstpdp/issues"
+  },
+  "homepage": "https://github.com/arrowrowe/cstpdp#readme",
+  "dependencies": {
+    "bluebird": "3.3.4",
+    "fs-extra": "0.26.7"
+  }
+}
