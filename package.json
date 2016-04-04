@@ -20,6 +20,7 @@
   "homepage": "https://github.com/arrowrowe/cstpdp#readme",
   "dependencies": {
     "bluebird": "3.3.4",
-    "fs-extra": "0.26.7"
+    "fs-extra": "0.26.7",
+    "log4js": "0.6.33"
   }
 }
