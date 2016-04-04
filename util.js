@@ -15,13 +15,17 @@ module.exports = {
       (resolve, reject) => batch.writeFile(file, (err) => err ? reject(err) : resolve())
     )
   ),
+  color: {
+    gray: (g) => [g, g, g]
+  },
+  create: Promise.promisify(lwip.create),
   byPixel: (image, fn) => {
     const width = image.width();
     const height = image.height();
     const batch = image.batch();
     for (let j = 0; j < height; j++) {
       for (let i = 0; i < width; i++) {
-        batch.setPixel(i, j, fn(image.getPixel(i, j), i, j));
+        batch.setPixel(i, j, fn(i, j));
       }
     }
     return batch;
