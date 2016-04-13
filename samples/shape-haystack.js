@@ -7,8 +7,8 @@ const classifyByDirection = require('../lib/classify-by-direction');
 const joinClassifieds = require('../lib/join-classifieds');
 
 util.file.process(
-  'output/sign/gradients.png',
-  'output/sign/joint.png',
+  'input/haystack-gradient.png',
+  'output/haystack/joint.png',
   (image) => {
     const grayMatrix = convert.grayToMatrix(image);
     util.log.trace('Got: the gradients matrix');
