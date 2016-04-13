@@ -1,8 +1,8 @@
 'use strict';
 
-const Promise = global.Promise = require('bluebird');
-const fs = require('fs-extra');
 const path = require('path');
+const fs = require('fs-extra');
+const Promise = global.Promise = require('bluebird');
 
 const lwip = require('lwip');
 
@@ -56,8 +56,9 @@ const util = module.exports = {
   matrix: {
     width: (matrix) => matrix.length,
     height: (matrix) => matrix[0] ? matrix[0].length : 0,
-    createWith: (width, height, fn) => {
+    createWith: (width, height, fnVal) => {
       const matrix = new Array(width);
+      const fn = typeof fnVal === 'function' ? fnVal : (() => fnVal);
       util.matrix.forEach(
         width, height,
         (i, j) => matrix[i][j] = fn(i, j),
@@ -71,11 +72,13 @@ const util = module.exports = {
     ),
     forEach: (width, height, fn, fnCol) => {
       for (let i = 0; i < width; i++) {
-        fnCol && fnCol(i);
+        if (fnCol) {
+          fnCol(i);
+        }
         for (let j = 0; j < height; j++) {
           fn(i, j);
         }
       }
     },
   },
-}
+};

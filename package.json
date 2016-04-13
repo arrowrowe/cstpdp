@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf output",
+    "lint": "xo",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,5 +23,23 @@
     "bluebird": "3.3.4",
     "fs-extra": "0.26.7",
     "log4js": "0.6.33"
+  },
+  "devDependencies": {
+    "xo": "0.14.0"
+  },
+  "xo": {
+    "esnext": false,
+    "semicolon": true,
+    "space": 2,
+    "rules": {
+      "yoda": 0,
+      "arrow-parens": [
+        2,
+        "always"
+      ],
+      "no-throw-literal": 0,
+      "no-return-assign": 0,
+      "comma-dangle": 0
+    }
   }
 }
